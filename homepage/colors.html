@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <title>
+            colors
+        </title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <style>
+
+            html, body{
+                height: 100%;
+                margin: 0;
+            }
+            .left-half{
+                float: left;
+                width: 50%;
+                height: 100%;
+                box-sizing: border-box;
+                background-color: #afafaf;
+                color: white;
+                padding: 15px;
+            }
+
+            .right-half{
+                float: right;
+                width: 50%;
+                height: 100%;
+                box-sizing: border-box;
+                background-color: #dfdfdf;
+            }
+
+            p{
+                font-size: 18px;
+                font-family: tahoma;
+            }
+
+            /*#button1{
+                margin-top: 20px;
+                padding: 6px;
+                border-radius: 20px;
+                background-color: #6f6f6f;
+                color: white;
+            }*/
+
+
+            .links ul{
+                text-decoration: none;
+                margin-top: 50px;
+                padding: 0;
+            }
+            .links li{
+                display: inline;
+                margin-right: 20px;
+            }
+            .links a{
+                padding: 12px;
+                text-decoration: none;
+                color: white;
+                font-size: 18px;
+                background-color: #bfbfbf;
+                border-radius: 25px;
+            }
+            .links a:hover{
+                background-color: #000;
+            }
+
+
+        </style>
+
+        <script>
+            function colors()
+            {
+                let r = document.querySelector("#red").value;
+                if(r > 255)
+                {
+                    r = 255;
+                }
+                let g = document.querySelector("#green").value;
+                if(g > 255)
+                {
+                    g = 255;
+                }
+                let b = document.querySelector("#blue").value;
+                if(b > 255)
+                {
+                    b = 255;
+                }
+                document.querySelector("#right-half").style.backgroundColor = "rgb(" + r + "," + g + "," + b + ")";
+            }
+        </script>
+
+    </head>
+    <body>
+        <div class= "left-half">
+            <h1> Select the values for r,g,b mix (0 - 255) and submit</h1>
+            <p>Red</p>
+            <input type="number" min="0" max="255" id="red">
+            <br>
+            <p>Green</p>
+            <input type="number" min="0" max="255" id="green">
+            <br>
+            <p>Blue</p>
+            <input type="number" min="0" max="255" id="blue">
+            <br><br>
+            <button type="button" onclick="colors()" id="button1" class="btn btn-primary">Submit</button>
+            <div class="links">
+                <ul>
+                    <li><a href="index.html">homepage</a></li>
+                    <li><a href="mario.html">mario</a></li>
+                    <li><a href="ceaser.html">ceaser</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="right-half" id="right-half">
+        </div>
+    </body>
+</html>

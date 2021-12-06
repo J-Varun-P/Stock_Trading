@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Index
+{% endblock %}
+
+
+{% block main %}
+    <table class="table table-dark table-stripped">
+        <thead>
+            <tr>
+                <th>Symbol</th>
+                <th>Shares</th>
+                <th>Price</th>
+                <th>Transacted</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in rows %}
+                {% set symbol = row["symbol"] %}
+                {% set shares = row["quantity"] %}
+                {% set price = row["price"] %}
+                {% set transacted = row["transacted"] %}
+                <tr>
+                    <td>{{symbol}}</td>
+                    <td>{{shares}}</td>
+                    <td>{{"%0.2f" %(price)}}</td>
+                    <td>{{transacted}}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

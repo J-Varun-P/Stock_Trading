@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <title>
+            mario
+        </title>
+        <style>
+
+            html, body{
+                height: 100%;
+                margin: 0;
+            }
+            .left-half{
+                float: left;
+                width: 50%;
+                height: 100%;
+                padding: 10px;
+                box-sizing: border-box;
+                background-color: #afafaf;
+                position: relative;
+            }
+
+            .right-half{
+                float: right;
+                width: 50%;
+                height: 100%;
+                padding: 10px;
+                box-sizing: border-box;
+                background-color: #dfdfdf;
+                position: relative;
+            }
+
+            .mario{
+                position: absolute;
+                top: 50%;
+                left: 25%;
+                border: 1px solid blue;
+                padding: 10px;
+                background-color: aqua;
+                border-radius: 20px;
+                color: white;
+            }
+
+
+            .mario1{
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                border: 1px solid blue;
+                padding: 10px;
+                background-color: aqua;
+                border-radius: 20px;
+                color: white;
+            }
+
+            .links ul{
+                text-decoration: none;
+                margin-top: 50px;
+                padding: 0;
+            }
+            .links li{
+                display: inline;
+                margin-right: 20px;
+            }
+            .links a{
+                padding: 12px;
+                text-decoration: none;
+                color: white;
+                font-size: 18px;
+                background-color: #bfbfbf;
+                border-radius: 25px;
+            }
+            .links a:hover{
+                background-color: #000;
+            }
+        </style>
+
+        <script>
+            function mario()
+            {
+                let counter = 0;
+                let string = "";
+                counter = document.querySelector("#inum").value;
+                if(counter> 8 || counter < 1)
+                {
+                    if(counter < 1)
+                    {
+                        string = "Please enter a positive value";
+                        document.querySelector("#val2").innerHTML = string;
+                    }
+                    else
+                    {
+                        string = "Please enter a value in the range [1, 8]";
+                        document.querySelector("#val2").innerHTML = string;
+                    }
+                    return;
+                }
+                /*document.querySelector("#val1").innerHTML = counter; */
+                for (let i = 0; i < counter; i++)
+                {
+                    for(let j = 0; j < counter - i - 1; j++)
+                    {
+                        string += " ";
+                    }
+                    for(let j = 0; j < i + 1; j++)
+                    {
+                        string += "#";
+                    }
+                    string += "\n";
+                }
+                document.querySelector("#val2").innerHTML = string;
+            }
+        </script>
+
+    </head>
+    <body>
+        <div class= "left-half">
+            <h1 style="color: white;">Mario</h1>
+            <pre style="color: white; font-size: 18px">Pset1 implemention of mario<br><br>Please provide length for the mario's steps</pre>
+            <div class="mario">
+                <label for="pset1">Length: </label>
+                <input type="number" id="inum" name="inum">
+                <button type = "button" onclick="mario()">submit</button>
+            </div>
+
+            <div class="links">
+                <ul>
+                    <li><a href="index.html">homepage</a></li>
+                    <li><a href="ceaser.html">ceaser</a></li>
+                    <li><a href="colors.html">colors</a></li>
+                </ul>
+            </div>
+
+        </div>
+        <div class="right-half">
+           <!-- <p class="mario1" id="val1">0</p>-->
+            <pre id="val2" class="mario1" style="font-size: 14px; margin: auto"></pre>
+        </div>
+    </body>
+</html>

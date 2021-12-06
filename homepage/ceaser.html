@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <title>
+            ceaser
+        </title>
+        <style>
+
+            html, body{
+                height: 100%;
+                width: 100%;
+                margin: 0;
+            }
+            .left-half{
+                float: left;
+                width: 50%;
+                height: 100%;
+                padding: 10px;
+                box-sizing: border-box;
+                background-color: #afafaf;
+                position: relative;
+            }
+
+            .right-half{
+                float: right;
+                width: 50%;
+                height: 100%;
+                padding: 10px;
+                box-sizing: border-box;
+                background-color: #dfdfdf;
+                position: relative;
+            }
+
+            .ceaser{
+                position: absolute;
+                top: 40%;
+                left: 25%;
+                border: 1px solid blue;
+                padding: 10px;
+                background-color: aqua;
+                border-radius: 20px;
+                color: white;
+            }
+
+
+            .ceaser1{
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                border: 1px solid blue;
+                padding: 10px;
+                background-color: aqua;
+                border-radius: 20px;
+                color: white;
+            }
+
+
+            .links ul{
+                text-decoration: none;
+                margin-top: 50px;
+                padding: 0;
+            }
+            .links li{
+                display: inline;
+                margin-right: 20px;
+            }
+            .links a{
+                padding: 12px;
+                text-decoration: none;
+                color: white;
+                font-size: 18px;
+                background-color: #bfbfbf;
+                border-radius: 25px;
+            }
+            .links a:hover{
+                background-color: #000;
+            }
+
+
+        </style>
+
+        <script>
+            function ceaser()
+            {
+                let key = 0;
+                let string = "";
+                key = document.querySelector("#inum").value;
+                string = document.querySelector("#msg").value;
+
+                key = key % 26;
+
+                let temp = 0;
+
+                let len = string.length;
+
+                let cipher = "";
+
+                /*document.querySelector("#val1").innerHTML = counter; */
+                for (let i = 0; i < len; i++)
+                {
+                    temp = string.charCodeAt(i);
+                    if(string.charCodeAt(i) >= 97 && string.charCodeAt(i) <= 122)
+                    {
+                        temp = string.charCodeAt(i) - 97;
+                        temp += key;
+                        temp = temp % 26;
+                        temp += 97;
+                    }
+                    else if(string.charCodeAt(i) >= 65 && string.charCodeAt(i) <= 90)
+                    {
+                        temp = string.charCodeAt(i) - 65;
+                        temp += key;
+                        temp = temp % 26;
+                        temp += 65;
+                    }
+                    if((i+1)%45 == 0)
+                    {
+                        cipher += "\n";
+                    }
+                    cipher += String.fromCharCode(temp);
+                }
+                document.querySelector("#val2").innerHTML = cipher;
+            }
+        </script>
+
+    </head>
+    <body>
+        <div class= "left-half">
+            <h1 style="color: white;">Caeser Cipher</h1>
+            <pre style="color: white; font-size: 18px">Pset2 implemention of Ceaser Cipher</pre>
+            <div class="ceaser">
+                <label for="pset2.1">Key for cipher: </label><br><br>
+                <input type="number" id="inum" name="inum">
+                <p>Message to encrypt</p>
+                <textarea type="" id="msg"></textarea><br><br>
+                <button type = "button" onclick="ceaser()">submit</button>
+            </div>
+
+            <div class="links">
+                <ul>
+                    <li><a href="index.html">homepage</a></li>
+                    <li><a href="mario.html">mario</a></li>
+                    <li><a href="colors.html">colors</a></li>
+                </ul>
+            </div>
+
+        </div>
+        <div class="right-half">
+           <!-- <p class="mario1" id="val1">0</p>-->
+           <h1 style="color: #fff;">Ciphered message:</h1><br>
+            <pre id="val2" class="ceaser1" style="font-size: 14px; margin: auto"></pre>
+        </div>
+    </body>
+</html>

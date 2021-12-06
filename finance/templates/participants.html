@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Index
+{% endblock %}
+
+
+{% block main %}
+    <table class="table table-dark table-stripped">
+        <thead>
+            <tr>
+                <th>Participant</th>
+                <th>Current_amount</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in rows %}
+                {% set name = row["username"] %}
+                {% set valuation = row["valuation"] %}
+                <tr>
+                    <td>{{name}}</td>
+                    <td>{{"%0.2f" %(valuation)}}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

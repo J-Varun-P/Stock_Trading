@@ -1,0 +1,103 @@
+body{
+margin: 0px;
+background-color: #ffe6cc;
+}
+
+.clear{
+clear: both;
+}
+
+.header{
+    background-color: #ff9900;
+    color: white;
+    padding: 40px;
+    height: 25%;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.navigation{
+    background-color: aqua;
+    color: white;
+    height: 10%;
+    box-sizing: border-box;
+}
+
+.navigation ul{
+    list-style: none;
+    height: 100%;
+   /* padding: 10px;*/
+    margin-left: 120px;
+    box-sizing: border-box;
+}
+
+.navigation li{
+    position: relative;
+    display: inline;
+    padding: 12px;
+    /*height: 100%;*/
+    /*margin: auto;*/
+    margin-right: 20px;
+    font-family: Tahoma;
+    font-size: 20px;
+    top: 30%;
+    border: 1px solid blue;
+    border-radius: 20px;
+    /*box-sizing: border-box;*/
+}
+
+.navigation li:hover{
+    background-color: darkblue;
+}
+
+.navigation a{
+    text-decoration: none;
+}
+
+.navigation a:hover{
+    color: white;
+}
+
+.container{
+    width: 75%;
+    /*margin: auto;*/
+    height: 54%;
+    box-sizing: border-box;
+}
+
+.section1{
+    float: left;
+    width: 50%;
+    /*height: 380px;*/
+    height: 100%;
+    padding: 10px;
+    text-align: center;
+    box-sizing: border-box;
+    background-color: white;
+    position: relative;
+}
+
+.section2{
+    float: left;
+    width: 50%;
+    /*height: 380px;*/
+    height: 100%;
+    padding: 10px;
+    text-align: center;
+    box-sizing: border-box;
+    background-color: Gray;
+    position: relative;
+}
+
+.section1 h1{
+    position: absolute;
+    top: 45%;
+    left: 25%;
+}
+
+.section2 p{
+    position: absolute;
+    top: 50%;
+    left: 22.5%;
+    color: white;
+}
